@@ -4,7 +4,7 @@ using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
 using ServerSync;
-using Service;
+
 namespace ExpandWorldData.Factions;
 [BepInPlugin(GUID, NAME, VERSION)]
 public class EWF : BaseUnityPlugin
