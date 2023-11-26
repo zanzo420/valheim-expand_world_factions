@@ -1,0 +1,9 @@
+{
+  "name": "Expand_World_Factions",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/JereKuusela/valheim-expand_world_factions",
+  "description": "Allows adding new factions and changing existing ones.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2202"
+  ]
+}
