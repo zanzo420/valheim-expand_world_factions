@@ -22,7 +22,8 @@ public class IsEnemy
       __result = BaseAI.IsEnemy(b, a);
       return false;
     }
-    if (a.IsPlayer() && b.GetBaseAI() && b.GetBaseAI().IsAggravatable())
+    // targetTamed needed to avoid infinite recursion if aggravatable is also tamed.
+    if (a.IsPlayer() && !targetTamed && b.GetBaseAI() && b.GetBaseAI().IsAggravatable())
     {
       // Players can always attack aggravatable creatures.
       // UI requires false for green health bar.
