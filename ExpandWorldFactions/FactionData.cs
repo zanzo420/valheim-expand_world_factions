@@ -61,8 +61,8 @@ public class FactionData
   public bool AttackSame;
   public Character.Faction TamedFaction = Character.Faction.Players;
   public HashSet<Character.Faction> Friendly = [];
-  public HashSet<Character.Faction> AggravatedFriendly = [];
-  public HashSet<Character.Faction> AlertedFriendly = [];
+  public HashSet<Character.Faction>? AggravatedFriendly;
+  public HashSet<Character.Faction>? AlertedFriendly;
 
   public FactionData(FactionYaml yaml, Func<string, Character.Faction> getFaction, Func<HashSet<Character.Faction>> getFactions)
   {
@@ -70,13 +70,9 @@ public class FactionData
     AttackSame = yaml.attackSame;
     TamedFaction = yaml.tamedFaction == "" ? Character.Faction.Players : getFaction(yaml.tamedFaction);
     Friendly = GetFactions(yaml.friendly, getFaction, getFactions);
-    if (yaml.aggravatedFriendly == null)
-      AggravatedFriendly = Friendly;
-    else
+    if (yaml.aggravatedFriendly != null)
       AggravatedFriendly = GetFactions(yaml.aggravatedFriendly, getFaction, getFactions);
-    if (yaml.alertedFriendly == null)
-      AlertedFriendly = Friendly;
-    else
+    if (yaml.alertedFriendly != null)
       AlertedFriendly = GetFactions(yaml.alertedFriendly, getFaction, getFactions);
   }
 

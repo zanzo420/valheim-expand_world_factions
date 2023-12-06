@@ -45,9 +45,9 @@ public class IsEnemy
     if (targetTamed && FactionManager.TryGetData(targetFaction, out var targetData))
       targetFaction = targetData.TamedFaction;
     var ai = a.GetBaseAI();
-    if (ai && ai.IsAlerted())
+    if (data.AlertedFriendly != null && ai && ai.IsAlerted())
       __result = !data.AlertedFriendly.Contains(targetFaction);
-    else if (ai && ai.IsAggravated())
+    else if (data.AggravatedFriendly != null && ai && ai.IsAggravated())
       __result = !data.AggravatedFriendly.Contains(targetFaction);
     else
       __result = !data.Friendly.Contains(targetFaction);

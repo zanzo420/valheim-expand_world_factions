@@ -11,7 +11,7 @@ public class EWF : BaseUnityPlugin
 {
   public const string GUID = "expand_world_factions";
   public const string NAME = "Expand World Factions";
-  public const string VERSION = "1.1";
+  public const string VERSION = "1.2";
 #nullable disable
   private static ManualLogSource Log;
   public static EWF Instance;
