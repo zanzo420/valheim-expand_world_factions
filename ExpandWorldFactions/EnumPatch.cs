@@ -7,7 +7,7 @@ namespace ExpandWorldData.Factions;
 
 #pragma warning disable IDE0051
 [HarmonyPatch]
-public class TryParseBiome
+public class TryParseFaction
 {
   static IEnumerable<MethodBase> TargetMethods()
   {
